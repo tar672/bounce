@@ -1,14 +1,10 @@
 Crafty.c('Ball', {
   init: function() {
-    this.requires('2D, Canvas, Color, Box2D, Collision');
-    this.color('red');
+    this.requires('2D, Canvas, Box2D, Collision, spr_ball');
     this.w = 30;
 		this.h = 30;
 
-
-		this.onHit("Goal", function() {
-			alert("you won");
-		})
+		this.onHit("Goal", wonLevel);
   }
 });
 
@@ -24,16 +20,14 @@ Crafty.c("PathPart", {
 
 Crafty.c("Goal", {
 	init: function() {
-		this.requires("2D, Canvas, Color, COllision");
+		this.requires("2D, Canvas, Color");
 		this.color("yellow");
-
-		
 	}
-})
+});
 
 Crafty.c("Obstacle", {
 	init: function() {
 		this.requires("2D, Canvas, Color, Box2D");
 		this.color("black");
 	}
-})
+});
